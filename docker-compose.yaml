@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  myredis:
+    image: redis
+
+  flaskapp:
+    build: ./flaskdev
+    ports:
+      - '5000:5000'
+    depends_on:
+      - myredis
+

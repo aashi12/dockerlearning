@@ -6,7 +6,7 @@ app= Flask(__name__)
 
 @app.route('/getdata')
 def getname():
-    response = "Hello, Wworld!"
+    response = "Hello, world!"
     rcache=redis.Redis(host='myredis',port=6379,db=0)
     rcache.lpush("namee","helloworld")
     print(rcache.lrange("namee",0,-1))
